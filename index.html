@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
+  
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -9,14 +10,17 @@
     <script src="public/js/prismjs/prism.js" defer></script>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   </head>
+  
   <body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+    
     <header>
       <p class="title">Scientific Research Smart Assistant</p>
       <p class="subtitle">SciRA</p>
     </header>
+    
     <article id="what" typeof="schema:ScholarlyArticle" resource="#">
-      <h1>What is Scira?</h1>
       <section>
+        <h1>What is Scira?</h1>
         <ol>
           <li property="schema:contributor" typeof="sa:ContributorRole">
             <a property="schema:contributor" href="https://github.com/stefan2212" typeof="schema:Person">
@@ -44,6 +48,7 @@
             </a>
           </li>
         </ol>
+        
         <ol>
           <li id="scienceai">
             <a href="https://scira.github.io/" typeof="schema:Corporation">
@@ -52,37 +57,37 @@
           </li>
         </ol>
       </section>
-
       <section typeof="sa:Abstract" id="abstract">
         <h2>Abstract</h2>
         <p>
-          When writing academic papers, searching for related literature and managing documents/references can be a burden. 
-          We are developing a smart platform able to provide an innovative visual experience regarding the 
+          When writing academic papers, searching for related literature and managing documents/references can be a burden.
+          We are developing a smart platform able to provide an innovative visual experience regarding the
           references between papers, their genealogy, and various information about (co-)authors.
           Additionally, the system will offer multple data/knowledge visualization solutions and filtering
           techniques using several refinements (publication year, subject, keywords, language).
         </p>
       </section>
+      
       <section typeof="sa:MaterialsAndMethods" id="motivation">
         <h2>Motivation</h2>
         <aside typeof="schema:WPSideBar">
           <p>
-           You are in your last year in college and you want to write your Bachelor Degree documentation.
-           You need to find your paper references but you don't know how and where to find them. This is the moment
-           where SciRA comes to the rescue.
+            You are in your last year in college and you want to write your Bachelor Degree documentation.
+            You need to find your paper references but you don't know how and where to find them. This is the moment
+            where SciRA comes to the rescue.
           </p>
           <p>
             
           </p>
         </aside>
         <p>
-          SciRA is a smart search engine for finding academic papers. 
+          SciRA is a smart search engine for finding academic papers.
           Using the variety of filter that our application offers, you can make a precise search in order to find
-          the best article for your academic paper. You can search for a certain papers by: University, publish date, 
+          the best article for your academic paper. You can search for a certain papers by: University, publish date,
           name of the author, domain, etc.
         </p>
-        
       </section>
+      
       <section typeof="sa:Results" id="definition">
         <h2>Architecture</h2>
         <p>
@@ -93,28 +98,30 @@
             <li> Paper sugestion </li>
           </ol>
           All of these services are orchestrated by a main server that exposes an API for the client.
-          To find information about all the routes, click  <a target="_blank" href="https://app.swaggerhub.com/apis/sciraweb/scira/1.0.0#/"> here </a> 
+          To find information about all the routes, click  <a target="_blank" href="https://app.swaggerhub.com/apis/sciraweb/scira/1.0.0#/"> here </a>
         </p>
-        <h4> General Architecture diagram</h1>
-        <img src="public/resources/Capture.PNG" width="880" height="655">
-
-        <section id="file-headers">
-          <h3>The model Graph</h3>
-          <p>
-            <img src="public/resources/model.png" width="1024" height="860">
-          </p>
-         <h3> SparQL query example</h3>
-         <p>
-          <img src="public/resources/sparql2.png" width="1024" height="860">
+        <h4>General Architecture diagram</h4>
+        <img src="public/resources/infra.png" alt="General Architecture diagram">
+      </section>
+      
+      <section id="file-headers">
+        <h3>The model Graph</h3>
+        <p>
+          <img src="public/resources/model.png" alt="The model Graph">
+        </p>
+        <h3>SparQL query example</h3>
+        <p>
+          <img src="public/resources/sparql2.png" alt="SparQL query example">
         </p>
         <p>
-          <img src="public/resources/sparql.png" width="1024" height="860">
+          <img src="public/resources/sparql.png" alt="SparQL query example">
         </p>
-
-        <section>
-          <h3> Future work</h3>
-          <p> For the next component, we will build a classifier that will manage the detection
-            of the paper section. This clasifier will use the TF-IDF algorithm to asociate the paper 
+      </section>
+      
+      <section>
+        <h3> Future work</h3>
+        <p> For the next component, we will build a classifier that will manage the detection
+          of the paper section. This clasifier will use the TF-IDF algorithm to asociate the paper
           title to a vector of numbers wich represents the term frequencies weighted by the total
         number of papers containing the computed frequencies.  </p>
         <p>
@@ -124,23 +131,20 @@
         </p>
         <p>
           Another future work will be the recommendation system based on the same features computed by
-          the TF-IDF algorithm and, for recommendation efficiency, after we crawl all the papers, we will 
+          the TF-IDF algorithm and, for recommendation efficiency, after we crawl all the papers, we will
           apply a clustering algorithm based on the Bisecting K-Means principle with the cosine similarity
           as a distance score between two TF-IDF vector instances.
         </p>
-        </section>
+      </section>
 
-        <section>
-          <h3> Conclusion</h3>
-          <p>
-            The team enthusiasm related to the project in development might lead to future paper publications related to the infrastucture, the recommendation system
-            and, eventually to a future citation detection system that may increase the popularity of the idea of helping people publish academic papers with a cooperative system.
-            This may transitively come out handy for the academic staff to inspire and cite from other publications and, why not, spread the idea of writing future papers. 
-
-  
-          </p>
-        </section>
-
-
+      <section>
+        <h3> Conclusion</h3>
+        <p>
+          The team enthusiasm related to the project in development might lead to future paper publications related to the infrastucture, the recommendation system
+          and, eventually to a future citation detection system that may increase the popularity of the idea of helping people publish academic papers with a cooperative system.
+          This may transitively come out handy for the academic staff to inspire and cite from other publications and, why not, spread the idea of writing future papers.
+        </p>
+      </section>
+    </article>
   </body>
 </html>
